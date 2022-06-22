@@ -9,7 +9,7 @@ class Produto extends Model
 {
     use HasFactory;
 
-    public $table = 'Produto';
+    public $table = 'produtos';
 
     /**
      * The attributes that are mass assignable.

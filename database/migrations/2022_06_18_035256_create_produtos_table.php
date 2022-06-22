@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id('codigo');
             $table->string('nome');
             $table->decimal('valor');
-            $table->longText('endereco');
+            $table->longText('descricao');
         });
     }
-    
+
     /**
      * Reverse the migrations.
      *
