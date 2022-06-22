@@ -14,8 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('clientes', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('codigo');
+            $table->string('nome');
+            $table->string('cnpjcpf');
+            $table->string('endereco');
         });
     }
 
