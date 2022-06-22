@@ -18,7 +18,10 @@ Route::get('/', function () {
 });
 
 Route::get('/produtos', 
-    'App\Http\Controllers\ProdutoController@listagem');
+    'App\Http\Controllers\ProdutoController@listagem')->name('produto.listagem');
 
-Route::get('/produto_update/{codigo}', 
-    'App\Http\Controllers\ProdutoController@update');
+Route::get('/produto_editar/{codigo}', 
+    'App\Http\Controllers\ProdutoController@editar')->name('produto.editar');
+
+Route::post('/produto_update/{codigo}', 
+    'App\Http\Controllers\ProdutoController@update')->name('produto.update');

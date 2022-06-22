@@ -26,7 +26,20 @@ class ProdutoController extends Controller
         
     }
 
-    public function update(Request $codigo){
+    public function editar($codigo){
+        if(view()->exists('produto.editar')) {
+            $produto = Produto::where("codigo", $codigo)->get()->first();
 
+            return view('produto.editar', [
+                'produto'      => $produto
+            ]);
+        } else {
+            return 'Página não encontrada';
+        }
+    }
+
+    public function update(Request $request, $codigo){
+        Produto::where("codigo", $codigo)->update($request->except("_token"));
+        return redirect(route("produto.listagem"));
     }
 }

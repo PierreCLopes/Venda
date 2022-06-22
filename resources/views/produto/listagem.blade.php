@@ -27,8 +27,8 @@
                 <td>{{$p->valor}}</td>
                 <td>{{$p->descricao}}</td>
                 <td>
-                    <a href="produto_update/{{$p->codigo}}">Editar</a>
-                    <a href="produto_delete/{{$p->codigo}}">Deletar</a>
+                    <a href="produto_editar/{{$p->codigo}}">Editar</a>
+                    <a href="produto_deletar/{{$p->codigo}}">Deletar</a>
                 </td>
             </tr>
         @endforeach

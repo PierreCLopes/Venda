@@ -6,7 +6,7 @@
 
 @section('conteudo')
     <h1 class="text-center">Editar Produto - #{{ $produto->codigo }}</h1>
-    <a href="{{ route("produto.listagem") }}" class="btn btn-outline-warning">Voltar</a>
+    
     <hr>
 
     <div class="row justify-content-center">
@@ -21,30 +21,14 @@
                     <label for="nome">Nome:</label>
                     <input type="text" class="form-control" id="nome" name="nome" value="{{ $produto->nome }}" maxlength="200">
                 </div>
-                <br/>
                 <div class="form-group">
-                    <label for="description">Descrição da pendência:</label>
-                    <textarea rows="5" cols="50" class="form-control" id="description" name="description" maxlength="3000">{{ $todo->description }}</textarea>
-                </div>
-                <br/>
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 form-group">
-                        <label for="status">Status da Pendência: </label>
-                        <input type="text" class="form-control" id="status" name="status" value="{{ $todo->status }}" maxlength="40">
-                    </div>
-                    <div class="col-sm-12 col-md-6 form-group">
-                        <label for="date_todo">Data Limite:</label>
-                        <input type="date" class="form-control" id="date_todo" name="date_todo" value={{ $todo->date_todo }}>
-                    </div>
+                    <label for="valor">Valor:</label>
+                    <input type="number" min="1" step="any" class="form-control" id="valor" name="valor" value="{{ $produto->valor }}">
                 </div>
                 <br/>
                 <div class="form-group">
-                    <label for="todo_groups_id">Grupo:</label>
-                    <select class="form-select" name="todo_groups_id" id="todo_groups_id">
-                        @foreach ($grupos as $g)
-                            <option value="{{ $g->id }}" {{ $g->id == $todo->todo_groups_id ? "selected" : "" }}> {{ $g->name }} </option>
-                        @endforeach
-                    </select>
+                    <label for="descricao">Descrição:</label>
+                    <textarea rows="5" cols="50" class="form-control" id="descricao" name="descricao" maxlength="3000">{{ $produto->descricao }}</textarea>
                 </div>
                 <br/>
                 <button type="submit" class="btn btn-primary">Alterar</button>
