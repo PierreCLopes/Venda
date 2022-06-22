@@ -25,4 +25,8 @@ class ProdutoController extends Controller
         }
         
     }
+
+    public function update(Request $codigo){
+
+    }
 }

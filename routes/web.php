@@ -19,3 +19,6 @@ Route::get('/', function () {
 
 Route::get('/produtos', 
     'App\Http\Controllers\ProdutoController@listagem');
+
+Route::get('/produto_update/{codigo}', 
+    'App\Http\Controllers\ProdutoController@update');
