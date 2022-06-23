@@ -25,3 +25,21 @@ Route::get('/produto_editar/{codigo}',
 
 Route::post('/produto_update/{codigo}', 
     'App\Http\Controllers\ProdutoController@update')->name('produto.update');
+
+Route::get('/cliente', 
+    'App\Http\Controllers\ClienteController@listagem')->name('cliente.listagem');
+
+Route::get('/cliente_editar/{codigo}', 
+    'App\Http\Controllers\ClienteController@editar')->name('cliente.editar');
+
+Route::post('/cliente_update/{codigo}', 
+    'App\Http\Controllers\ClienteController@update')->name('cliente.update');
+
+Route::get('/venda', 
+    'App\Http\Controllers\VendaController@listagem')->name('venda.listagem');
+
+Route::get('/venda_editar/{codigo}', 
+    'App\Http\Controllers\VendaController@editar')->name('venda.editar');
+
+Route::post('/venda_update/{codigo}', 
+    'App\Http\Controllers\VendaController@update')->name('venda.update');

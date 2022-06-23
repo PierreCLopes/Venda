@@ -10,7 +10,7 @@ class Venda extends Model
     use HasFactory;
 
     public $timestamps = false;
-    public $table = 'Venda';
+    public $table = 'vendas';
 
     /**
      * The attributes that are mass assignable.
