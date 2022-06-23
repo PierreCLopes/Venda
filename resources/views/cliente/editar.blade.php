@@ -24,7 +24,7 @@
                 
                 <div class="form-group">
                     <label for="nome">CNPJ:</label>
-                    <input type="text" class="form-control" id="cnpj" name="cnpj" value="{{ $cliente->cnpj }}" maxlength="30">
+                    <input type="text" class="form-control" id="cnpjcpf" name="cnpjcpf" value="{{ $cliente->cnpjcpf }}" maxlength="30">
                 </div>
                 
                 <div class="form-group">

@@ -11,6 +11,7 @@
     <title>@yield('titulo')</title>
   </head>
   <body>
+    <a href="{{ route("cliente.listagem") }}">Clientes</a>
     <a href="{{ route("produto.listagem") }}">Produtos</a>
     <hr>
     <div class="container">
