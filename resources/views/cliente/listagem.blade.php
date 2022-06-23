@@ -2,11 +2,11 @@
 
 
 @section('titulo')
-    Listagem de Cliente
+    Listagem de Clientes
 @stop
 
 @section('conteudo')
-    Listagem de Cliente
+    Listagem de Clientes
     <hr>
     @if(Session::has('message'))
         <p class="alert alert-info">{{ Session::get('message') }}</p>

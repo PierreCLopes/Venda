@@ -2,11 +2,11 @@
 
 
 @section('titulo')
-    Listagem de venda
+    Listagem de Vendas
 @stop
 
 @section('conteudo')
-    Listagem de vendas
+    Listagem de Vendas
     <hr>
     @if(Session::has('message'))
         <p class="alert alert-info">{{ Session::get('message') }}</p>

@@ -11,23 +11,22 @@
     <title>@yield('titulo')</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Menu</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route("cliente.listagem") }}">Clientes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route("produto.listagem") }}">Produtos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route("venda.listagem") }}">Vendas</a>
-          </li>
-        </ul>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark justify-content-lg-center justify-content-start">
+      <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
+          <ul class="navbar-nav mx-auto text-lg-center text-left">
+              <li class="nav-item">
+                  <a class="h3 nav-link" href="{{ route("inicio") }}">Início</a> 
+              </li>
+              <li class="nav-item">
+                  <a class="h3 nav-link" href="{{ route("cliente.listagem") }}">Clientes</a>
+              </li>
+              <li class="nav-item">
+                  <a class="h3 nav-link" href="{{ route("produto.listagem") }}">Produtos</a> 
+              </li>
+              <li class="nav-item">
+                  <a class="h3 nav-link" href="{{ route("venda.listagem") }}">Vendas</a> 
+              </li>
+          </ul>
       </div>
     </nav>
     <hr>

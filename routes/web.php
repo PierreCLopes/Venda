@@ -14,8 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('welcome');})->name('inicio');
 
 Route::get('/produtos/inserir', 
     'App\Http\Controllers\ProdutoController@inserir')->name('produto.inserir');
