@@ -23,9 +23,9 @@
         @foreach ($cliente as $p)
             <tr>
                 <td><a href="cliente/{{$p->codigo}}">{{$p->codigo}}</a></td>
-                <td>{{$p->nome}}</td>
-                <td>{{$p->valor}}</td>
-                <td>{{$p->descricao}}</td>
+                <td>{{$p->nome}}</td>        
+                <td>{{$p->cnpjcpf}}</td>
+                <td>{{$p->endereco}}</td>>
                 <td>
                     <a href="cliente_editar/{{$p->codigo}}">Editar</a>
                     <a href="cliente_deletar/{{$p->codigo}}">Deletar</a>

@@ -15,16 +15,22 @@
     <table class="table">
         <tr>
             <td>Código</td>
-            <td>Nome</td>
-            <td>Valor</td>
+            <td>Cliente</td>
+            <td>Produto</td>
+            <td>Quantidade</td>
+            <td>Valor total</td>
+            <td>Valor unitário</td>
             <td>Descrição</td>
             <td>Ações</td>
         </tr>
         @foreach ($venda as $p)
             <tr>
-                <td><a href="venda/{{$p->codigo}}">{{$p->codigo}}</a></td>
-                <td>{{$p->nome}}</td>
-                <td>{{$p->valor}}</td>
+                <td><a href="venda/{{$p->codigo}}">{{$p->codigo}}</a></td>                
+                <td>{{$p->cliente}}</td>
+                <td>{{$p->produto}}</td>
+                <td>{{$p->quantidade}}</td>
+                <td>{{$p->valortotal}}</td>
+                <td>{{$p->valorunitario}}</td>
                 <td>{{$p->descricao}}</td>
                 <td>
                     <a href="venda_editar/{{$p->codigo}}">Editar</a>
