@@ -13,7 +13,7 @@
     @endif
 
     <a href="{{ route("cliente.inserir") }}">Inserir</a>
-    <table class="table">
+    <table class="table table-striped">
         <tr>
             <td>Código</td>
             <td>Nome</td>

@@ -12,7 +12,8 @@
         <p class="alert alert-info">{{ Session::get('message') }}</p>
     @endif
 
-    <table class="table">
+    <a href="{{ route("venda.inserir") }}">Inserir</a>    
+    <table class="table table-striped">
         <tr>
             <td>Código</td>
             <td>Cliente</td>
