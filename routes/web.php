@@ -35,7 +35,11 @@ Route::post('/produto_update/{codigo}',
 Route::post('/produtos/create', 
     'App\Http\Controllers\ProdutoController@create')->name('produto.create');
 
-Route::get('/cliente', 
+
+Route::get('/clientes/inserir', 
+    'App\Http\Controllers\ClienteController@inserir')->name('cliente.inserir');
+
+Route::get('/clientes', 
     'App\Http\Controllers\ClienteController@listagem')->name('cliente.listagem');
 
 Route::get('/cliente_editar/{codigo}', 
@@ -52,4 +56,7 @@ Route::get('/venda_editar/{codigo}',
 
 Route::post('/venda_update/{codigo}', 
     'App\Http\Controllers\VendaController@update')->name('venda.update');
+
+Route::post('/clientes/create', 
+    'App\Http\Controllers\ClienteController@create')->name('cliente.create');
 

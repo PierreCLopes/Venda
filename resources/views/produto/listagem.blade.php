@@ -11,6 +11,7 @@
     @if(Session::has('message'))
         <p class="alert alert-info">{{ Session::get('message') }}</p>
     @endif
+    
     <a href="{{ route("produto.inserir") }}">Inserir</a>
     <table class="table">
         <tr>
