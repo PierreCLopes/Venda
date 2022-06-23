@@ -10,7 +10,7 @@ class Cliente extends Model
     use HasFactory;
 
     public $timestamps = false;
-    public $table = 'Cliente';
+    public $table = 'clientes';
 
     /**
      * The attributes that are mass assignable.

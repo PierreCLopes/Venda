@@ -34,3 +34,22 @@ Route::post('/produto_update/{codigo}',
 
 Route::post('/produtos/create', 
     'App\Http\Controllers\ProdutoController@create')->name('produto.create');
+
+Route::get('/cliente', 
+    'App\Http\Controllers\ClienteController@listagem')->name('cliente.listagem');
+
+Route::get('/cliente_editar/{codigo}', 
+    'App\Http\Controllers\ClienteController@editar')->name('cliente.editar');
+
+Route::post('/cliente_update/{codigo}', 
+    'App\Http\Controllers\ClienteController@update')->name('cliente.update');
+
+Route::get('/venda', 
+    'App\Http\Controllers\VendaController@listagem')->name('venda.listagem');
+
+Route::get('/venda_editar/{codigo}', 
+    'App\Http\Controllers\VendaController@editar')->name('venda.editar');
+
+Route::post('/venda_update/{codigo}', 
+    'App\Http\Controllers\VendaController@update')->name('venda.update');
+

@@ -17,13 +17,12 @@ class ProdutoController extends Controller
             Log::info(
                 DB::getQueryLog()
             );
-            //dd($produtos);
+        
             return view('produto.listagem', 
             ['produtos' => $produtos]);
         } else {
             return 'Página não encontrada.';
-        }
-        
+        }        
     }
 
     public function editar($codigo){
@@ -31,7 +30,7 @@ class ProdutoController extends Controller
             $produto = Produto::where("codigo", $codigo)->get()->first();
 
             return view('produto.editar', [
-                'produto'      => $produto
+                'produto' => $produto
             ]);
         } else {
             return 'Página não encontrada';
