@@ -13,6 +13,7 @@
   <body>
     <a href="{{ route("cliente.listagem") }}">Clientes</a>
     <a href="{{ route("produto.listagem") }}">Produtos</a>
+    <a href="{{ route("venda.listagem") }}">Venda</a>
     <hr>
     <div class="container">
         @yield('conteudo')
