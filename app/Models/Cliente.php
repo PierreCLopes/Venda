@@ -23,4 +23,8 @@ class Cliente extends Model
         'cnpjcpf',
         'endereco'
     ];
+
+    public function vendas() {
+        return $this->hasMany(Venda::class);
+    }    
 }

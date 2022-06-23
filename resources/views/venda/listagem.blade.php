@@ -23,9 +23,8 @@
             <td>Descrição</td>
             <td>Ações</td>
         </tr>
-        @foreach ($venda as $p)
-            <tr>
-                <td><a href="venda/{{$p->codigo}}">{{$p->codigo}}</a></td>                
+        @foreach ($venda as $p)         
+                <td><a href="venda/{{$p->codigo}}">{{$p->codigo}}</a></td>             
                 <td>{{$p->cliente}}</td>
                 <td>{{$p->produto}}</td>
                 <td>{{$p->quantidade}}</td>

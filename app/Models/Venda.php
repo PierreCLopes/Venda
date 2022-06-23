@@ -26,4 +26,12 @@ class Venda extends Model
         'valortotal',
         'descricao'
     ];
+
+    public function clientes() {
+        return $this->belongsTo(Cliente::class);
+    }
+
+    public function produto() {
+        return $this->belongsTo(Produto::class);
+    }
 }
