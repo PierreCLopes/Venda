@@ -7,16 +7,7 @@
 @section('conteudo')
     <h1 class="text-center">Editar venda - #{{ $venda->codigo }}</h1>
     
-    <hr>        'codigo',
-        'cliente',
-        'venda',
-        'quantidade',
-        'valorunitario',
-        'valortotal',
-        'descricao'
-
-
-
+    <hr>        
     <div class="row justify-content-center">
         <div class="col-10 col-sm-10 col-md-8 col-lg-6 mt-4">
             <form method="POST" action="{{ route("venda.update", $venda->codigo) }}">
@@ -27,8 +18,29 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="nome">Cliente:</label>
-                    <input type="text" class="form-control" id="cliente" name="cliente" value="{{ $venda->cliente }}" maxlength="200">
+                    <label for="cliente">Cliente:</label>
+                    <select class="form-control" name="cliente" id="cliente" value="$venda->cliente">
+                        @foreach(App\Models\Cliente::All() as $row)
+                            @if($row->codigo === $venda->cliente)
+                                <option value="{{$row->codigo}}" selected>{{$row->nome}}</option>
+                            @else
+                                <option value="{{$row->codigo}}">{{$row->nome}}</option>
+                            @endif
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="produto">Produto:</label>
+                    <select class="form-control" name="produto" id="produto">
+                        @foreach(App\Models\Produto::All() as $row)
+                            @if($row->codigo === $venda->produto)
+                                <option value="{{$row->codigo}}" selected>{{$row->nome}}</option>
+                            @else
+                                <option value="{{$row->codigo}}">{{$row->nome}}</option>
+                            @endif
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -37,20 +49,19 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="valor">Valor unitário:</label>
+                    <label for="valorunitario">Valor unitário:</label>
                     <input type="number" min="1" step="any" class="form-control" id="valorunitario" name="valorunitario" value="{{ $venda->valorunitario }}">
                 </div>
 
                 <div class="form-group">
-                    <label for="valor">Valor total:</label>
-                    <input type="number" min="1" step="any" class="form-control" id="valortotal" name="valortotal" value="{{ $venda->valortotal }}">
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" min="1" step="any" class="form-control" id="quantidade" name="quantidade" value="{{ $venda->quantidade }}">
                 </div>
 
                 <div class="form-group">
-                    <label for="valor">Quantidade:</label>
-                    <input type="number" min="1" step="any" class="form-control" id="quantidade" name="quantidade" value="{{ $venda->quantidade }}">
+                    <label for="valortotal">Valor total:</label>
+                    <input type="number" min="1" step="any" class="form-control" id="valortotal" name="valortotal" value="{{ $venda->valortotal }}" disabled>
                 </div>
-                
                 <br/>
                 <div class="form-group">
                     <label for="descricao">Descrição:</label>

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use App\Models\Cliente;
+use App\Models\Venda;
 use Log;
 
 class ClienteController extends Controller
@@ -31,7 +33,7 @@ class ClienteController extends Controller
 
             return view('cliente.editar', [
                 'cliente' => $cliente
-            ]);
+            ]); 
         } else {
             return 'Página não encontrada';
         }
@@ -43,17 +45,16 @@ class ClienteController extends Controller
     }
 
     public function deletar($codigo){
-        //$produto = Produto::where("codigo", $codigo)->get()->first();
+        $venda = Venda::where("cliente", $codigo)->get()->first();
 
-        //if(isset($todo->id) && !is_null($todo->id)){
-       //     return view('todo-grupos.listagem', [
-       //         'grupos' => TodoGrupo::get(),
-       //         'error'  => "Falha ao Remover Grupo. Há registros de To-Do relacionados ao grupo e portanto o mesmo não pode ser removido. Se realmente quiser remover este grupo, remova ou altere o grupo dos registros de To-Do conflitantes."
-       //     ]);
-      //  } else {
+        if($venda){
+            Session::flash('message',
+                           'Falha ao deletar cliente. Há registros de venda relacionados ao cliente e portanto o mesmo não pode ser removido!');
+        } else {
             Cliente::where("codigo", $codigo)->delete();
-            return redirect(route("cliente.listagem"));
-       // }
+            
+        }
+        return redirect(route("cliente.listagem"));
     }
 
     public function inserir() {

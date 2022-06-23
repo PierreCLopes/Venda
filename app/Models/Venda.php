@@ -27,11 +27,11 @@ class Venda extends Model
         'descricao'
     ];
 
-    public function clientes() {
-        return $this->belongsTo(Cliente::class);
+    public function produto(){
+        return $this->hasOne(Produto::class, 'codigo', 'produto');
     }
 
-    public function produto() {
-        return $this->belongsTo(Produto::class);
+    public function cliente(){
+        return $this->hasOne(Cliente::class, 'codigo', 'cliente');
     }
 }

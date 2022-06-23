@@ -11,9 +11,25 @@
     <title>@yield('titulo')</title>
   </head>
   <body>
-    <a href="{{ route("cliente.listagem") }}">Clientes</a>
-    <a href="{{ route("produto.listagem") }}">Produtos</a>
-    <a href="{{ route("venda.listagem") }}">Venda</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Menu</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route("cliente.listagem") }}">Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route("produto.listagem") }}">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route("venda.listagem") }}">Vendas</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <hr>
     <div class="container">
         @yield('conteudo')

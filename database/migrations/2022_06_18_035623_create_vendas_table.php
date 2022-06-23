@@ -15,8 +15,13 @@ return new class extends Migration
     {
         Schema::create('vendas', function (Blueprint $table) {
             $table->id('codigo');
-            $table->foreignId('cliente');
-            $table->foreignId('produto');
+            
+            $table->unsignedBigInteger('cliente');
+            $table->foreign('cliente')->references('codigo')->on('clientes');
+
+            $table->unsignedBigInteger('produto');
+            $table->foreign('produto')->references('codigo')->on('produtos');
+
             $table->decimal('quantidade');
             $table->decimal('valorunitario');
             $table->decimal('valortotal');

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use App\Models\Produto;
+use App\Models\Venda;
 use Log;
 
 class ProdutoController extends Controller
@@ -43,17 +45,16 @@ class ProdutoController extends Controller
     }
 
     public function deletar($codigo){
-        //$produto = Produto::where("codigo", $codigo)->get()->first();
+        $venda = Venda::where("produto", $codigo)->get()->first();
 
-        //if(isset($todo->id) && !is_null($todo->id)){
-       //     return view('todo-grupos.listagem', [
-       //         'grupos' => TodoGrupo::get(),
-       //         'error'  => "Falha ao Remover Grupo. Há registros de To-Do relacionados ao grupo e portanto o mesmo não pode ser removido. Se realmente quiser remover este grupo, remova ou altere o grupo dos registros de To-Do conflitantes."
-       //     ]);
-      //  } else {
+        if($venda){
+            Session::flash('message',
+                           'Falha ao deletar produto. Há registros de venda relacionados ao produto e portanto o mesmo não pode ser removido!');
+        }else{
             Produto::where("codigo", $codigo)->delete();
-            return redirect(route("produto.listagem"));
-       // }
+            
+        }
+        return redirect(route("produto.listagem"));
     }
 
     public function inserir() {

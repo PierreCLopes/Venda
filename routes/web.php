@@ -45,8 +45,21 @@ Route::get('/clientes',
 Route::get('/cliente_editar/{codigo}', 
     'App\Http\Controllers\ClienteController@editar')->name('cliente.editar');
 
+Route::get('/cliente_deletar/{codigo}', 
+    'App\Http\Controllers\ClienteController@deletar')->name('cliente.deletar');
+
 Route::post('/cliente_update/{codigo}', 
     'App\Http\Controllers\ClienteController@update')->name('cliente.update');
+
+Route::post('/clientes/create', 
+    'App\Http\Controllers\ClienteController@create')->name('cliente.create');
+
+
+Route::get('/vendas/inserir', 
+    'App\Http\Controllers\VendaController@inserir')->name('venda.inserir');
+
+Route::get('/venda_deletar/{codigo}', 
+    'App\Http\Controllers\VendaController@deletar')->name('venda.deletar');
 
 Route::get('/venda', 
     'App\Http\Controllers\VendaController@listagem')->name('venda.listagem');
@@ -57,6 +70,8 @@ Route::get('/venda_editar/{codigo}',
 Route::post('/venda_update/{codigo}', 
     'App\Http\Controllers\VendaController@update')->name('venda.update');
 
-Route::post('/clientes/create', 
-    'App\Http\Controllers\ClienteController@create')->name('cliente.create');
+Route::post('/vendas/create', 
+    'App\Http\Controllers\VendaController@create')->name('venda.create');
+
+
 
