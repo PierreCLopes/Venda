@@ -42,4 +42,31 @@ class ProdutoController extends Controller
         Produto::where("codigo", $codigo)->update($request->except("_token"));
         return redirect(route("produto.listagem"));
     }
+
+    public function deletar($codigo){
+        //$produto = Produto::where("codigo", $codigo)->get()->first();
+
+        //if(isset($todo->id) && !is_null($todo->id)){
+       //     return view('todo-grupos.listagem', [
+       //         'grupos' => TodoGrupo::get(),
+       //         'error'  => "Falha ao Remover Grupo. Há registros de To-Do relacionados ao grupo e portanto o mesmo não pode ser removido. Se realmente quiser remover este grupo, remova ou altere o grupo dos registros de To-Do conflitantes."
+       //     ]);
+      //  } else {
+            Produto::where("codigo", $codigo)->delete();
+            return redirect(route("produto.listagem"));
+       // }
+    }
+
+    public function inserir() {
+        if(view()->exists('produto.cadastro')) {
+            return view('produto.cadastro');
+        } else {
+            return 'Página não encontrada';
+        }
+    }
+
+    public function create(Request $request){
+        Produto::create($request->except("_token"));
+        return redirect(route("produto.listagem"));
+    }
 }
